@@ -1,0 +1,123 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "month",
+              "elicitationRequired": true,
+              "type": "AMAZON.Month",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.610472829816.1106151398860"
+              }
+            },
+            {
+              "name": "year",
+              "elicitationRequired": true,
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.610472829816.1440609169213"
+              }
+            },
+            {
+              "name": "day",
+              "elicitationRequired": true,
+              "type": "AMAZON.Ordinal",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.610472829816.1606367433045"
+              }
+            }
+          ],
+          "name": "CaptureZodiacSignIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "month",
+              "type": "AMAZON.Month"
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            },
+            {
+              "name": "day",
+              "type": "AMAZON.Ordinal"
+            }
+          ],
+          "name": "CaptureZodiacSignIntent",
+          "samples": [
+            "My birthday is {year} {month} {day}",
+            "I was born on {month} {day} {year}",
+            "I was born on {day} {month} {year}",
+            "I was born on {day}",
+            "I was bonr on {year}",
+            "I Was born on {month}"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "hackathon project"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which month were you born?"
+          }
+        ],
+        "id": "Elicit.Slot.610472829816.1106151398860"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which year were you born?"
+          }
+        ],
+        "id": "Elicit.Slot.610472829816.1440609169213"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What day were you born?"
+          }
+        ],
+        "id": "Elicit.Slot.610472829816.1606367433045"
+      }
+    ]
+  }
+}
